@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <title>Fotogalerij | Sous le Noyer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header style="position: relative;">
+
+  <div class="language-switch">
+    <strong>NL</strong> | <a href="fr/index.html">FR</a>
+  </div>
+
+  <img src="images/logo-sous-le-noyer.jpg" alt="Sous le Noyer logo" class="logo">
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="gites-en-faciliteiten.html">Gites</a>
+    <a href="reserveren.html">Reserveren</a>
+    <a href="fotogalerij.html">Foto’s</a>
+    <a href="wie-zijn-wij.html">Wie zijn wij</a>
+    <a href="wat-te-doen.html">Wat te doen</a>
+    <a href="contact.html">Contact & Route</a>
+  </nav>
+</header>
+
+<main class="hero">
+  <h1>Fotogalerij</h1>
+  <p>Een indruk van Sous le Noyer en de omgeving</p>
+</main>
+
+<main class="content" style="max-width:1000px;margin:auto;padding:40px 20px;">
+
+  <!-- Subgalerij -->
+  <h2>De gîtes</h2>
+  <div class="gallery-grid">
+    <img src="images/gites/gites1.jpg" alt="Gîte Sous le Noyer">
+    <img src="images/gites/gites2.jpg" alt="Gîte Sous le Noyer">
+    <img src="images/gites/gites3.jpg" alt="Gîte Sous le Noyer">
+  </div>
+
+  <h2>Verbouwing</h2>
+  <div class="gallery-grid">
+    <img src="images/verbouwing/verbouw1.jpg" alt="Woonkamer">
+    <img src="images/verbouwing/verbouw2.jpg" alt="Keuken">
+    <img src="images/verbouwing/verbouw3.jpg" alt="Slaapkamer">
+  </div>
+
+  <h2>Auvergne en bezienswaardigheden</h2>
+  <div class="gallery-grid">
+    <img src="images/wat-te-doen/tedoen1.jpg" alt="Eten">
+    <img src="images/wat-te-doen/tedoen2.jpg" alt="Vichy">
+    <img src="images/wat-te-doen/tedoen3.jpg" alt="Vichy">
+  </div>
+
+  <h2>Tuin & terrein</h2>
+  <div class="gallery-grid">
+    <img src="images/tuin-terrein/tuin1.jpg" alt="Vallei">
+    <img src="images/tuin-terrein/tuin2.jpg" alt="Tuin">
+    <img src="images/tuin-terrein/tuin3.jpg" alt="Hangmat">
+  </div>
+
+  <h2>Omgeving</h2>
+  <div class="gallery-grid">
+    <img src="images/omgeving/omgeving1.jpg" alt="Rivier la Sioule">
+    <img src="images/omgeving/omgeving2.jpg" alt="Wandelen">
+    <img src="images/omgeving/omgeving3.jpg" alt="Wildwatervaren">
+  </div>
+
+ 
+</main>
+
+<footer>
+  <p>© Sous le Noyer – Châtelut, Servant (Auvergne)</p>
+</footer>
+
+<div id="lightbox">
+  <img src="" alt="">
+</div>
+<script>
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = lightbox.querySelector("img");
+
+document.querySelectorAll(".gallery-grid img").forEach(img => {
+  img.addEventListener("click", () => {
+    lightboxImg.src = img.src;
+    lightbox.classList.add("active");
+  });
+});
+
+lightbox.addEventListener("click", () => {
+  lightbox.classList.remove("active");
+});
+
+document.addEventListener("keydown", e => {
+  if (e.key === "Escape") {
+    lightbox.classList.remove("active");
+  }
+});
+</script>
+
+</body>
+</html>
